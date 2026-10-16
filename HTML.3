@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090d">
+<title>ATTAR | Creative Portfolio</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090d;--card:#12121b;--purple:#a855f7;--light:#d8b4fe;--muted:#a09bad}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;font-family:Arial,Tahoma,sans-serif;line-height:1.8}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1120px;margin:auto}
+header{position:sticky;top:0;z-index:10;background:#09090df2;border-bottom:1px solid #292032}
+nav{height:75px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--purple)}
+.links{display:flex;gap:24px}
+.links a{color:var(--muted);font-size:14px}
+.links a:hover{color:var(--light)}
+.btn{display:inline-block;padding:11px 20px;border-radius:9px;font-weight:bold;font-size:14px;transition:.25s;cursor:pointer}
+.primary{background:linear-gradient(120deg,#a855f7,#7026c5);color:white;border:1px solid #a855f7}
+.secondary{border:1px solid #493657;background:transparent;color:white}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px #a855f733}
+.hero{min-height:620px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding-top:60px;padding-bottom:60px}
+.tag{display:inline-block;color:var(--light);border:1px solid #493657;border-radius:30px;padding:5px 14px;font-size:12px}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.3;margin:20px 0}
+.gradient{background:linear-gradient(90deg,#e9d5ff,#a855f7);background-clip:text;-webkit-background-clip:text;color:transparent}
+p{color:var(--muted)}
+.hero p{max-width:490px;font-size:15px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.visual{height:380px;position:relative;display:grid;place-items:center;border:1px solid #49305f;border-radius:25px;overflow:hidden;background:radial-gradient(ellipse at center,#54247c,#17101f 55%,#0b0a10)}
+.visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#a855f718 1px,transparent 1px),linear-gradient(90deg,#a855f718 1px,transparent 1px);background-size:30px 30px}
+.orb{width:155px;height:155px;border-radius:35px;transform:rotate(-20deg);background:linear-gradient(135deg,#f3e8ff,#a855f7,#581c87);box-shadow:0 0 100px #a855f788;animation:float 4s infinite ease-in-out}
+@keyframes float{50%{transform:translateY(-18px) rotate(10deg)}}
+.float{position:absolute;background:#17101fee;border:1px solid #59416c;padding:9px 13px;border-radius:10px;font-size:12px;color:var(--light)}
+.f1{top:35px;right:20px}.f2{bottom:40px;left:20px}
+section{padding:85px 0}
+.kicker{color:var(--purple);font-size:12px;letter-spacing:2px}
+.heading{font-size:36px;margin:8px 0 12px}
+.section-head{margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{background:var(--card);border:1px solid #292032;border-radius:17px;padding:22px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--purple)}
+.project-art{height:220px;border-radius:12px;display:grid;place-items:center;margin-bottom:20px;overflow:hidden;background:radial-gradient(circle at center,#7339a3,#21152e)}
+.project-art b{font-size:35px;letter-spacing:4px}
+.art2{background:radial-gradient(circle,#31518c,#111827)}
+.art3{background:radial-gradient(circle,#943b78,#241226)}
+.art4{background:radial-gradient(circle,#267a75,#102020)}
+.project-meta{font-size:12px;color:var(--light);margin-top:8px}
+.card p{font-size:14px;margin-top:6px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-box{padding:30px;border:1px solid #352541;border-radius:18px;background:linear-gradient(145deg,#1b1326,#100e16)}
+.symbol{font-size:55px;color:var(--light)}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.skills span{padding:7px 12px;border:1px solid #493657;border-radius:8px;font-size:12px;color:var(--light)}
+.contact{padding:45px 25px;border:1px solid #593875;border-radius:20px;background:radial-gradient(ellipse at bottom,#58218740,transparent 65%),var(--card)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.contact p{margin:10px 0 20px}
+.contact-links{display:grid;gap:12px}
+.contact-link{display:block;padding:14px 16px;border:1px solid #493657;border-radius:10px;background:#ffffff05;overflow-wrap:anywhere}
+.contact-link:hover{border-color:var(--purple)}
+.contact-link strong{display:block;color:var(--light);font-size:13px}
+.contact-link span{font-size:13px}
+footer{border-top:1px solid #292032;padding:25px 0}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:15px}
+footer p{font-size:12px}
+@media(max-width:700px){
+.links{display:none}
+.hero{grid-template-columns:1fr;gap:35px;padding-top:50px}
+.visual{height:290px}
+.grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+.heading{font-size:29px}
+.project-art{height:190px}
+.footer{flex-direction:column;text-align:center}
+section{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav class="container">
+<a href="#home" class="logo">ATTAR<span>.</span></a>
+<div class="links">
+<a href="#home">الرئيسية</a>
+<a href="#projects">أعمالي</a>
+<a href="#about">من أنا</a>
+<a href="#contact">تواصل معي</a>
+</div>
+<a href="#contact" class="btn primary">لنعمل معًا ↗</a>
+</nav>
+</header>
+
+<main>
+<div class="container hero" id="home">
+<div>
+<span class="tag">✦ متاح لمشاريع جديدة</span>
+<h1>أصنع تجارب<br><span class="gradient">رقمية مختلفة.</span></h1>
+<p>أصمم وأطوّر مواقع إلكترونية عصرية تجمع بين الإبداع والأداء وتجربة المستخدم. أحوّل أفكارك إلى واقع رقمي.</p>
+<div class="actions">
+<a href="#projects" class="btn primary">اكتشف أعمالي ↙</a>
+<a href="#contact" class="btn secondary">تواصل معي ↗</a>
+</div>
+</div>
+<div class="visual">
+<div class="orb"></div>
+<div class="float f1">✳ ATTAR STUDIO</div>
+<div class="float f2">HTML · CSS · JavaScript</div>
+</div>
+</div>
+
+<section id="projects">
+<div class="container">
+<div class="section-head">
+<span class="kicker">01 / PORTFOLIO</span>
+<h2 class="heading">مشاريع <span class="gradient">مختارة.</span></h2>
+<p>نماذج تصميم تجريبية يمكنك استبدالها بأعمالك الحقيقية.</p>
+</div>
+<div class="grid">
+<article class="card">
+<div class="project-art"><b>ATTAR</b></div>
+<h3>موقع إبداعي</h3>
+<p>تصميم موقع احترافي بهوية بصرية قوية وتجربة استخدام بسيطة.</p>
+<div class="project-meta">Web Design · UI/UX</div>
+</article>
+<article class="card">
+<div class="project-art art2"><b>TECH / 01</b></div>
+<h3>لوحة تحكم تقنية</h3>
+<p>واجهة منظمة لعرض البيانات والإحصائيات بطريقة واضحة.</p>
+<div class="project-meta">Dashboard · UI Design</div>
+</article>
+<article class="card">
+<div class="project-art art3"><b>MONOVA</b></div>
+<h3>هوية بصرية</h3>
+<p>تصور لعلامة تجارية عصرية بألوان متناسقة وتفاصيل مميزة.</p>
+<div class="project-meta">Branding · Art Direction</div>
+</article>
+<article class="card">
+<div class="project-art art4"><b>APP / 04</b></div>
+<h3>تصميم واجهة تطبيق</h3>
+<p>تجربة مرنة ومتجاوبة مع الشاشات المختلفة.</p>
+<div class="project-meta">Mobile UI · Responsive</div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-head">
+<span class="kicker">02 / ABOUT ME</span>
+<h2 class="heading">الإبداع يبدأ <span class="gradient">بفكرة.</span></h2>
+</div>
+<div class="about-grid">
+<div class="about-box">
+<div class="symbol">✳</div>
+<h3>ATTAR — تصميم له شخصية.</h3>
+<p>هدفي بناء تجارب رقمية تجمع بين الجمال والوظيفة مع الاهتمام بأدق التفاصيل.</p>
+</div>
+<div>
+<h3>المهارات والأدوات</h3>
+<p>تقنيات الويب لبناء واجهات حديثة وسريعة وسهلة الاستخدام.</p>
+<div class="skills">
+<span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span><span>UI/UX</span><span>Web Design</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact">
+<div class="contact-grid">
+<div>
+<span class="kicker">03 / LET'S TALK</span>
+<h2 class="heading">جاهز نبدأ <span class="gradient">مشروعك؟</span></h2>
+<p>عندك فكرة لموقع أو مشروع رقمي؟ تواصل معي عبر واتساب أو البريد الإلكتروني.</p>
+<a class="btn primary" href="https://wa.me/962781290108" target="_blank" rel="noopener noreferrer">راسلني على واتساب ↗</a>
+</div>
+<div class="contact-links">
+<a class="contact-link" href="https://wa.me/962781290108" target="_blank" rel="noopener noreferrer">
+<strong>WHATSAPP ↗</strong><span>0781290108</span>
+</a>
+<a class="contact-link" href="mailto:malekattar13@gmail.com">
+<strong>EMAIL ↗</strong><span>malekattar13@gmail.com</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer">
+<a href="#home" class="logo">ATTAR<span>.</span></a>
+<p>© <span id="year"></span> ATTAR. جميع الحقوق محفوظة.</p>
+<a href="#home" style="color:#d8b4fe;font-size:13px">العودة للأعلى ↑</a>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
